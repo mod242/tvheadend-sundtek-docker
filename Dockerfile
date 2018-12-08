@@ -3,7 +3,7 @@ MAINTAINER clemensvb <cjvb@gmx.net>
 #forked from MAINTAINER firsttris <info@teufel-it.de>
 
 # master, unstable, testing, stable
-ENV tvh_release=unstable
+ENV tvh_release=stable
 
 ENV _clean="rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*"
 ENV _apt_clean="eval apt-get clean && $_clean"
@@ -11,15 +11,20 @@ ENV _apt_clean="eval apt-get clean && $_clean"
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Install dependencies
-RUN apt-get update -qq \ 
+RUN apt-get update -qq \
  && apt-get install -qqy apt-transport-https software-properties-common bzip2 libavahi-client3 libav-tools xmltv wget udev gnupg2
 
 # Add key and tvheadend repository
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61
-RUN apt-add-repository "https://dl.bintray.com/tvheadend/deb ${tvh_release}"
+#RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61
+#RUN apt-add-repository "https://dl.bintray.com/tvheadend/deb ${tvh_release}"
+
+RUN wget https://doozer.io/keys/tvheadend/tvheadend/pgp
+RUN apt-key add pgp
+RUN sh -c 'echo "deb https://apt.tvheadend.org/${tvh_release} $(lsb_release -sc) main" | tee -a /etc/apt/sources.list.d/tvheadend.list'
+
 
 # Install tvheadend
-RUN apt-get update -qq \ 
+RUN apt-get update -qq \
  && apt-get install -qqy tvheadend
 
 # Install Sundtek DVB Driver
