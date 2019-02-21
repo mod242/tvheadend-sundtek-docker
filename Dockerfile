@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:stretch
 MAINTAINER clemensvb <cjvb@gmx.net>
 #forked from MAINTAINER firsttris <info@teufel-it.de>
 
