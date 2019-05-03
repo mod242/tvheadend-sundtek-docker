@@ -24,7 +24,7 @@ RUN sh -c 'echo "deb https://apt.tvheadend.org/${tvh_release} $(lsb_release -sc)
 
 
 # Install tvheadend
-RUN apt-get update -qq \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq \
  && apt-get install -qqy tvheadend
 
 # Install Sundtek DVB Driver
