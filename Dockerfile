@@ -23,7 +23,7 @@ RUN apt-key add pgp
 RUN sh -c 'echo "deb https://apt.tvheadend.org/${tvh_release} $(lsb_release -sc) main" | tee -a /etc/apt/sources.list.d/tvheadend.list'
 
 
-# Install tvheadend
+# Install tvheadend non interactive
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq \
  && apt-get install -qqy tvheadend
 
