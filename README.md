@@ -13,11 +13,11 @@ The 'unstable' version of tvheadend is used.
 15 Oct 2017: `Version 4.3-XXXX`
 
 Offical repository as source:   
-https://bintray.com/tvheadend/deb/tvheadend/
+https://apt.tvheadend.org
 
 ### Pull
 ```bash
-docker pull docker pull mod242/tvheadend-sundtek-docker
+docker pull docker pull clemensvb/tvheadend-sundtek-docker
 ```
 
 ### Run:
@@ -45,9 +45,9 @@ Don't install sundtek driver on your host.
 ### Build
 ```bash
 
-git clone https://github.com/mod242/tvheadend-sundtek-docker.git
+git clone https://github.com/clemensvb/tvheadend-sundtek-docker.git
 cd tvheadend-sundtek-docker
-docker build -t mod242/tvheadend-sundtek-docker .
+docker build -t clemensvb/tvheadend-sundtek-docker .
 ```
 
 ### Picons:
