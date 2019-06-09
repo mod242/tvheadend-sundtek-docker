@@ -17,7 +17,7 @@ https://bintray.com/tvheadend/deb/tvheadend/
 
 ### Pull
 ```bash
-docker pull docker pull clemensvb/tvheadend-sundtek-docker
+docker pull docker pull mod242/tvheadend-sundtek-docker
 ```
 
 ### Run:
@@ -45,9 +45,9 @@ Don't install sundtek driver on your host.
 ### Build
 ```bash
 
-git clone https://github.com/clemensvb/tvheadend-sundtek-docker.git
+git clone https://github.com/mod242/tvheadend-sundtek-docker.git
 cd tvheadend-sundtek-docker
-docker build -t clemensvb/tvheadend-sundtek-docker .
+docker build -t mod242/tvheadend-sundtek-docker .
 ```
 
 ### Picons:
