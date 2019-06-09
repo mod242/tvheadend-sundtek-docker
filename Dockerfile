@@ -15,8 +15,8 @@ RUN apt-get update -qq \
  && apt-get install -qqy apt-transport-https software-properties-common bzip2 libavahi-client3 libav-tools xmltv wget udev gnupg2 socat
 
 # Add key and tvheadend repository
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61
-RUN apt-add-repository "https://dl.bintray.com/tvheadend/deb ${tvh_release}"
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 89942AAE5CEAA174
+RUN apt-add-repository "https://apt.tvheadend.org/${tvh_release} stretch main"
 
 # Install tvheadend
 RUN apt-get update -qq \ 
